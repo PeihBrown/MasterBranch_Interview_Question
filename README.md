@@ -4,8 +4,6 @@
 - [TypeScript](https://www.typescriptlang.org/) - Programming Language
 - [Vite](https://vitejs.dev/) - Build Tool
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework
-- [Recharts](https://recharts.org/) - Charting Library
-- [SVGR](https://react-svgr.com/) - SVG to React Component Converter
 
 ## 📁 Project Structure
 
@@ -45,6 +43,7 @@ feature-name/
 
 ## 1. Data Structure & API Design
 ### Event Data Structure
+```
 interface Event {
   id: string
   title: string
@@ -64,6 +63,7 @@ interface Event {
     exceptions?: string[] // dates to skip
   }
 }
+```
 
 ### Tại Sao?
    - Cấu trúc sự kiện hỗ trợ cả cuộc hẹn và webinar
@@ -78,6 +78,7 @@ interface Event {
  - Nhược điểm: Tốn nhiều dung lượng lưu trữ, hơi khó update
 
 VD:
+```
 // Template Event
 {
   id: "template_123",
@@ -94,7 +95,7 @@ VD:
   { id: "event_2", templateId: "template_123", date: "2024-01-08" },
   ...
 ]
-
+```
 ### Approach 2
  - Lưu sự kiện + rule
  - Tính toán các sự kiện trên thực tế
@@ -102,12 +103,14 @@ VD:
  - Nhược điểm: query phức tạp hơn, tính toán nhiều hơn
 
 VD:
+```
 {
   id: "event_123",
   title: "Weekly Meeting",
   startDate: "2024-01-01",
   rule: "FREQ=WEEKLY;INTERVAL=1;UNTIL=20241231"
 }
+```
 
 ## 5. Future Development Plans
 1. **Feature Enhancements**:
